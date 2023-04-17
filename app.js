@@ -1,7 +1,7 @@
 const form = document.querySelector("form");
 const scoreDisplay = document.querySelector(".final-score");
 
-const correctAnswers = ["B", "A", "A", "D", "C", "C", "D", "B", "C", "A", "D", "B", "C", "C", "C"];
+const correctAnswers = ["B", "A", "A", "D", "C", "B", "D", "B", "C", "A", "D", "B", "C", "C", "C"];
 
 scoreDisplay.style.display = "none";
 
