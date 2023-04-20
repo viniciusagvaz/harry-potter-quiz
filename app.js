@@ -1,61 +1,48 @@
-const form = document.querySelector("form");
-const scoreDisplay = document.querySelector(".final-score");
-const send = document.querySelector(".sendBtn");
-const tryAgain = document.querySelector(".tryAgain");
+const form = document.querySelector(".quiz-form");
+const finalResult = document.querySelector(".result");
 
 const correctAnswers = ["B", "A", "A", "D", "C", "B", "D", "B", "C", "A", "D", "B", "C", "C", "C"];
-
-scoreDisplay.style.display = "none";
 
 form.addEventListener("submit", (event) => {
 	event.preventDefault();
 
-	const totalScoreDisplay = document.querySelector(".final-score p");
+	let score = 0;
 	const userAnswers = [
-		form.question1.value,
-		form.question2.value,
-		form.question3.value,
-		form.question4.value,
-		form.question5.value,
-		form.question6.value,
-		form.question7.value,
-		form.question8.value,
-		form.question9.value,
-		form.question10.value,
-		form.question11.value,
-		form.question12.value,
-		form.question13.value,
-		form.question14.value,
-		form.question15.value,
+		form.inputQuestion1.value,
+		form.inputQuestion2.value,
+		form.inputQuestion3.value,
+		form.inputQuestion4.value,
+    form.inputQuestion5.value,
+		form.inputQuestion6.value,
+		form.inputQuestion7.value,
+		form.inputQuestion8.value,
+    form.inputQuestion9.value,
+		form.inputQuestion10.value,
+		form.inputQuestion11.value,
+		form.inputQuestion12.value,
+    form.inputQuestion13.value,
+    form.inputQuestion14.value,
+    form.inputQuestion15.value,
 	];
 
-	let score = 0;
-
-	userAnswers.forEach((answer, index) => {
-		const selectedAnswer = document.querySelector(`input[name='question${index + 1}']:checked`);
-
-		const isCorrectAnswer = answer === correctAnswers[index];
-
-		if (isCorrectAnswer) {
+	userAnswers.forEach((userAnswer, index) => {
+		if (userAnswer == correctAnswers[index]) {
 			score += 1;
-			selectedAnswer.closest("label").classList.add("text-success", "fw-bolder");
-			return;
-		} else {
-			selectedAnswer.closest("label").classList.add("text-danger", "fw-bolder");
 		}
 	});
 
-	scoreDisplay.style.display = "block";
-	send.style.display = "none";
-	totalScoreDisplay.innerText = `${score} de 15`;
+	scrollTo(0, 100);
 
-	if (score < 15) {
-		tryAgain.style.display = "block";
+	finalResult.classList.remove("d-none");
 
-		tryAgain.addEventListener("click", () => {
-			document.location.reload();
-		});
-	}
+	let counter = 0;
+
+	const timer = setInterval(() => {
+		if (counter === score) {
+			clearInterval(timer);
+		}
+
+		finalResult.querySelector("span").textContent = `${counter}%`;
+		counter++;
+	}, 85);
 });
-
-tryAgain.style.display = "none";
