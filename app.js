@@ -42,7 +42,16 @@ form.addEventListener("submit", (event) => {
 			clearInterval(timer);
 		}
 
-		finalResult.querySelector("span").textContent = `${counter} Questões`;
+    if (score < 15){
+      const tryAgain = document.querySelector('.tryAgainBtn')
+
+      tryAgain.classList.remove("d-none");
+      tryAgain.addEventListener('click', () =>{
+        location.reload();        
+      })
+    }
+
+		finalResult.querySelector("span").textContent = `${counter} de 15`;
 		counter++;
 	}, 85);
 });
