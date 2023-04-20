@@ -42,7 +42,7 @@ form.addEventListener("submit", (event) => {
 			clearInterval(timer);
 		}
 
-		finalResult.querySelector("span").textContent = `${counter}%`;
+		finalResult.querySelector("span").textContent = `${counter} Questões`;
 		counter++;
 	}, 85);
 });
