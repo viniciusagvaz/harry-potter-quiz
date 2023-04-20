@@ -1,12 +1,17 @@
 const form = document.querySelector(".quiz-form");
 const finalResult = document.querySelector(".result");
 
-const correctAnswers = ["B", "A", "A", "D", "C", "B", "D", "B", "C", "A", "D", "B", "C", "C", "C"];
+const correctAnswers = [
+ "B", "A", "A",
+ "D", "C", "B",
+ "D", "B", "C",
+ "A", "D", "B",
+ "C", "C", "C"
+];
 
-form.addEventListener("submit", (event) => {
+const showResults = (event) => {
 	event.preventDefault();
 
-	let score = 0;
 	const userAnswers = [
 		form.inputQuestion1.value,
 		form.inputQuestion2.value,
@@ -25,21 +30,24 @@ form.addEventListener("submit", (event) => {
     form.inputQuestion15.value,
 	];
 
-	userAnswers.forEach((userAnswer, index) => {
+  let score = 0;
+  
+  const addScore = (userAnswer, index) => {
 		if (userAnswer == correctAnswers[index]) {
 			score += 1;
-		}
-	});
+		} 
+	}
+	userAnswers.forEach(addScore);
 
 	scrollTo(0, 100);
 
 	finalResult.classList.remove("d-none");
 
+  
 	let counter = 0;
-
-	const timer = setInterval(() => {
+	const scoreAnimation = setInterval(() => {
 		if (counter === score) {
-			clearInterval(timer);
+			clearInterval(scoreAnimation);
 		}
 
     if (score < 15){
@@ -54,4 +62,6 @@ form.addEventListener("submit", (event) => {
 		finalResult.querySelector("span").textContent = `${counter} de 15`;
 		counter++;
 	}, 85);
-});
+};
+
+form.addEventListener("submit", showResults)
