@@ -1,16 +1,19 @@
 const form = document.querySelector(".quiz-form");
-const finalResult = document.querySelector(".result");
+const resultDisplay = document.querySelector(".result");
 
 const correctAnswers = [
- "B", "B", "A",
- "D", "C", "B",
- "C", "B", "C",
- "A", "D", "B",
- "C", "C", "C"
+  "B", "B", "A",
+  "D", "C", "B",
+  "C", "B", "C",
+  "A", "D", "B",
+  "C", "C", "C",
 ];
 
-const showResults = (event) => {
-	event.preventDefault();
+const result = (event) => {
+event.preventDefault();
+  const finalScore = resultDisplay.querySelector("span")
+	let score = 0;
+	let counter = 0;
 
 	const userAnswers = [
 		form.inputQuestion1.value,
@@ -30,40 +33,39 @@ const showResults = (event) => {
 		form.inputQuestion15.value,
 	];
 
-	let score = 0;
+	const checkAnswer = (userAnswer, index) => {
+		const compereAnswers = userAnswer == correctAnswers[index];
 
-	const addScore = (userAnswer, index) => {
-		if (userAnswer == correctAnswers[index]) {
-			score += 1;
+		if (compereAnswers) {
+			score++;
 		}
+
+    if (score < 15) {
+      const tryAgain = document.querySelector(".tryAgainBtn");
+      tryAgain.classList.remove("d-none");
+      tryAgain.addEventListener("click", () => {
+        location.reload();
+      });
+    }
 	};
 
-	userAnswers.forEach(addScore);
+	const addScoreAnimation = setInterval(() => {
+		resultDisplay.classList.remove("d-none");
 
-	scrollTo(0, 100);
-
-	finalResult.classList.remove("d-none");
-
-	let counter = 0;
-
-	const scoreAnimation = setInterval(() => {
+		scrollTo(0, 100);
+    
 		if (counter === score) {
-			clearInterval(scoreAnimation);
+      clearInterval(addScoreAnimation);
 		}
-
-		finalResult.querySelector("span").textContent = `${counter} de 15`;
-
-		counter++;
-	}, 85);
+    
+    finalScore.textContent = `${counter} de 15`;
+    counter++;
+    
+	}, 150);
+	
   
-  const tryAgain = document.querySelector(".tryAgainBtn");
-  if (score < 15) {
-
-    tryAgain.classList.remove("d-none");
-    tryAgain.addEventListener("click", () => {
-      location.reload();
-    });
-  }
+  userAnswers.forEach(checkAnswer);
+  
 };
 
-form.addEventListener("submit", showResults);
+form.addEventListener("submit", result);
