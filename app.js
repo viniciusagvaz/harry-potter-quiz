@@ -2,15 +2,18 @@ const form = document.querySelector(".quiz-form");
 const resultDisplay = document.querySelector(".result");
 
 const correctAnswers = [
-  "B", "B", "A", "D", "C",
-  "B", "C", "B", "C", "A", 
-  "D", "B", "C", "C", "C"
+  "B", "B", "A", 
+  "D", "C","B", 
+  "C", "B", "C", 
+  "A", "D", "B", 
+  "C", "C", "C"
 ];
 
 const result = (event) => {
 	event.preventDefault();
 	const finalScore = resultDisplay.querySelector("span");
-	let score = 0;
+	
+  let score = 0;
 	let counter = 0;
 
 	const userAnswers = [
@@ -32,18 +35,18 @@ const result = (event) => {
 	];
 
 	const checkAnswer = (userAnswer, index) => {
-		const rightAnswers = userAnswer == correctAnswers[index];
-    const wrongAnswers = score < 15
+		const isRightAnswers = userAnswer === correctAnswers[index];
+    const isWrongAnswers = score < 15
 		
-    if (rightAnswers) {
+    if (isRightAnswers) {
 			score++;
 		}
 
-		if (wrongAnswers) {
+		if (isWrongAnswers) {
 			const tryAgain = document.querySelector(".tryAgainBtn");
 			tryAgain.classList.remove("d-none");
 			tryAgain.addEventListener("click", () => {
-				location.reload();
+			location.reload();
 			});
 		}
 	};
