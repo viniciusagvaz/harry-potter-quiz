@@ -1,7 +1,7 @@
 const form = document.querySelector(".quiz-form");
 const finalResult = document.querySelector(".result");
 
-const correctAnswers = ["B", "A", "A", "D", "C", "B", "D", "B", "C", "A", "D", "B", "C", "C", "C"];
+const correctAnswers = ["B", "B", "A", "D", "C", "B", "D", "B", "C", "A", "D", "B", "C", "C", "C"];
 
 const showResults = (event) => {
 	event.preventDefault();
