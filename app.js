@@ -1,7 +1,13 @@
 const form = document.querySelector(".quiz-form");
 const finalResult = document.querySelector(".result");
 
-const correctAnswers = ["B", "B", "A", "D", "C", "B", "C", "B", "C", "A", "D", "B", "C", "C", "C"];
+const correctAnswers = [
+ "B", "B", "A",
+ "D", "C", "B",
+ "C", "B", "C",
+ "A", "D", "B",
+ "C", "C", "C"
+];
 
 const showResults = (event) => {
 	event.preventDefault();
@@ -39,23 +45,25 @@ const showResults = (event) => {
 	finalResult.classList.remove("d-none");
 
 	let counter = 0;
+
 	const scoreAnimation = setInterval(() => {
 		if (counter === score) {
 			clearInterval(scoreAnimation);
 		}
 
-		if (score < 15) {
-			const tryAgain = document.querySelector(".tryAgainBtn");
-
-			tryAgain.classList.remove("d-none");
-			tryAgain.addEventListener("click", () => {
-				location.reload();
-			});
-		}
-
 		finalResult.querySelector("span").textContent = `${counter} de 15`;
+
 		counter++;
 	}, 85);
+  
+  const tryAgain = document.querySelector(".tryAgainBtn");
+  if (score < 15) {
+
+    tryAgain.classList.remove("d-none");
+    tryAgain.addEventListener("click", () => {
+      location.reload();
+    });
+  }
 };
 
 form.addEventListener("submit", showResults);
