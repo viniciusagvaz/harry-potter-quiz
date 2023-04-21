@@ -69,7 +69,7 @@ const calculateUserScore = (userAnswers) => {
 };
 
 const showFinalScore = () => {
-	scrollTo(0, 100);
+	scrollTo(0, 0);
 	finalResult.classList.remove("d-none");
 };
 
@@ -103,11 +103,7 @@ const showTryAgain = () => {
 
 	tryAgainBtn.classList.remove("d-none");
 
-  const tryAgain = () => {
-		location.reload();
-	};
-
-	tryAgainBtn.addEventListener("click", tryAgain)
+	tryAgainBtn.addEventListener("click", () => location.reload())
 };
 
 form.addEventListener("submit", result);
