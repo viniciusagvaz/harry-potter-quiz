@@ -40,7 +40,7 @@ const result = (event) => {
 
 	const checkAnswer = (userAnswer, index) => {
 		const isRightAnswers = userAnswer === correctAnswers[index];
-    const isWrongAnswers = score < 15
+    const isWrongAnswers = score < 100
 		
     if (isRightAnswers) {
 			score += 5;
@@ -65,7 +65,7 @@ const result = (event) => {
 
 		finalScore.textContent = `Você acertou ${counter}% do Quiz!`;
 		counter++;
-	}, 150);
+	}, 100);
 
 	userAnswers.forEach(checkAnswer);
 };
