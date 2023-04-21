@@ -1,20 +1,32 @@
 const form = document.querySelector(".quiz-form");
-const resultDisplay = document.querySelector(".result");
+const finalResult = document.querySelector(".result");
 
 const correctAnswers = [
-  "B", "B", "A", "D", "C",
-  "B", "C", "B", "C", "A",
-  "D", "B", "C", "C", "C",
-  "D", "A", "B", "D", "D"
+	"B",
+	"B",
+	"A",
+	"D",
+	"C",
+	"B",
+	"C",
+	"B",
+	"C",
+	"A",
+	"D",
+	"B",
+	"C",
+	"C",
+	"C",
+	"D",
+	"A",
+	"B",
+	"D",
+	"D",
 ];
 
-const result = (event) => {
-	event.preventDefault();
-	const finalScore = resultDisplay.querySelector("span");
-	
-  let score = 0;
-	let counter = 0;
+let score = 0;
 
+const getUserAnswers = () => {
 	const userAnswers = [
 		form.inputQuestion1.value,
 		form.inputQuestion2.value,
@@ -31,43 +43,71 @@ const result = (event) => {
 		form.inputQuestion13.value,
 		form.inputQuestion14.value,
 		form.inputQuestion15.value,
-    form.inputQuestion16.value,
-    form.inputQuestion17.value,
-    form.inputQuestion18.value,
-    form.inputQuestion19.value,
-    form.inputQuestion20.value,
+		form.inputQuestion16.value,
+		form.inputQuestion17.value,
+		form.inputQuestion18.value,
+		form.inputQuestion19.value,
+		form.inputQuestion20.value,
 	];
 
-	const checkAnswer = (userAnswer, index) => {
+	return userAnswers;
+};
+
+const calculateUserScore = (userAnswers) => {
+	userAnswers.forEach((userAnswer, index) => {
 		const isRightAnswers = userAnswer === correctAnswers[index];
-    const isWrongAnswers = score < 100
-		
-    if (isRightAnswers) {
+		const isWrongAnswers = score < 100;
+
+		if (isRightAnswers) {
 			score += 5;
 		}
 
 		if (isWrongAnswers) {
-			const tryAgain = document.querySelector(".tryAgainBtn");
-			tryAgain.classList.remove("d-none");
-			tryAgain.addEventListener("click", () => {
-			location.reload();
-			});
+      showTryAgain()
 		}
-	};
+	});
+};
 
-	const addScoreAnimation = setInterval(() => {
-		scrollTo(0, 100);
-		resultDisplay.classList.remove("d-none");
+const showFinalScore = () => {
+	scrollTo(0, 100);
+	finalResult.classList.remove("d-none");
+};
 
+const animateFinalScore = () => {
+	let counter = 0;
+
+	const finalScore = finalResult.querySelector("span");
+
+	const timer = setInterval(() => {
 		if (counter === score) {
-			clearInterval(addScoreAnimation);
+			clearInterval(timer);
 		}
 
 		finalScore.textContent = `Você acertou ${counter}% do Quiz!`;
 		counter++;
-	}, 100);
+	}, 30);
+};
 
-	userAnswers.forEach(checkAnswer);
+const result = (event) => {
+	event.preventDefault();
+
+	const userAnswers = getUserAnswers();
+
+	calculateUserScore(userAnswers);
+	showFinalScore();
+	animateFinalScore();
+};
+
+const showTryAgain = () => {
+	const tryAgainBtn = document.querySelector(".tryAgainBtn");
+
+	tryAgainBtn.classList.remove("d-none");
+
+  const tryAgain = () => {
+		location.reload();
+	};
+
+	tryAgainBtn.addEventListener("click", tryAgain)
 };
 
 form.addEventListener("submit", result);
