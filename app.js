@@ -2,11 +2,10 @@ const form = document.querySelector(".quiz-form");
 const resultDisplay = document.querySelector(".result");
 
 const correctAnswers = [
-  "B", "B", "A", 
-  "D", "C","B", 
-  "C", "B", "C", 
-  "A", "D", "B", 
-  "C", "C", "C"
+  "B", "B", "A", "D", "C",
+  "B", "C", "B", "C", "A",
+  "D", "B", "C", "C", "C",
+  "D", "A", "B", "D", "D"
 ];
 
 const result = (event) => {
@@ -32,6 +31,11 @@ const result = (event) => {
 		form.inputQuestion13.value,
 		form.inputQuestion14.value,
 		form.inputQuestion15.value,
+    form.inputQuestion16.value,
+    form.inputQuestion17.value,
+    form.inputQuestion18.value,
+    form.inputQuestion19.value,
+    form.inputQuestion20.value,
 	];
 
 	const checkAnswer = (userAnswer, index) => {
@@ -39,7 +43,7 @@ const result = (event) => {
     const isWrongAnswers = score < 15
 		
     if (isRightAnswers) {
-			score++;
+			score += 5;
 		}
 
 		if (isWrongAnswers) {
@@ -59,7 +63,7 @@ const result = (event) => {
 			clearInterval(addScoreAnimation);
 		}
 
-		finalScore.textContent = `${counter} de 15`;
+		finalScore.textContent = `Você acertou ${counter}% do Quiz!`;
 		counter++;
 	}, 150);
 
