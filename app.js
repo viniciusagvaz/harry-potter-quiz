@@ -56,7 +56,7 @@ const animateFinalScore = () => {
 			clearInterval(timer);
 		}
 
-		finalScore.textContent = `Você acertou ${counter}% do Quiz!`;
+		finalScore.textContent = `Você acertou ${counter++}% do Quiz!`;
 	}, 30);
 };
 
