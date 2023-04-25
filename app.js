@@ -26,20 +26,14 @@ const correctAnswers = [
 
 let score = 0;
 
-const getUserAnswers = () => {
-	const userAnswers = correctAnswers.map((userAnswer , index) => {
-		userAnswer = form[`inputQuestion${index + 1}`].value
-    return userAnswer;
-	});
+const getUserAnswers = () => correctAnswers.map((_, index) =>
+  form[`inputQuestion${index + 1}`].value);
 
-	return userAnswers;
-
-	// let userAnswers = []
-	// correctAnswers.forEach((_, index) => {
-	// 	const userAnswer = form[`inputQuestion${index + 1}`].value;
-	// 	userAnswers.push(userAnswer);
-	// });
-};
+/* let userAnswers = []
+  correctAnswers.forEach((_, index) => {
+  const userAnswer = form[`inputQuestion${index + 1}`].value;
+  userAnswers.push(userAnswer);
+*/
 
 const calculateUserScore = (userAnswers) => {
 	userAnswers.forEach((userAnswer, index) => {
