@@ -2,24 +2,43 @@ const form = document.querySelector(".quiz-form");
 const finalResult = document.querySelector(".result");
 
 const correctAnswers = [
-  "B","B","A","D",
-  "C","B","C","B",
-  "C","A","D","B",
-  "C","C","C","D",
-  "A","B","D","D",
+	"B",
+	"B",
+	"A",
+	"D",
+	"C",
+	"B",
+	"C",
+	"B",
+	"C",
+	"A",
+	"D",
+	"B",
+	"C",
+	"C",
+	"C",
+	"D",
+	"A",
+	"B",
+	"D",
+	"D",
 ];
 
 let score = 0;
 
 const getUserAnswers = () => {
-	let userAnswers = [];
-
-	correctAnswers.forEach((_, index) => {
-		const userAnswer = form[`inputQuestion${index + 1}`].value;
-		userAnswers.push(userAnswer);
+	const userAnswers = correctAnswers.map((userAnswer , index) => {
+		userAnswer = form[`inputQuestion${index + 1}`].value
+    return userAnswer;
 	});
 
 	return userAnswers;
+
+	// let userAnswers = []
+	// correctAnswers.forEach((_, index) => {
+	// 	const userAnswer = form[`inputQuestion${index + 1}`].value;
+	// 	userAnswers.push(userAnswer);
+	// });
 };
 
 const calculateUserScore = (userAnswers) => {
