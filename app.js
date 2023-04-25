@@ -58,7 +58,7 @@ const calculateUserScore = (userAnswers) => {
 
 const showFinalScore = () => {
 	scrollTo({
-		top: 100,
+		top: 10,
 		left: 0,
 		behavior: "smooth",
 	});
