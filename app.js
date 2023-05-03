@@ -14,23 +14,16 @@ let score = 0;
 const getUserAnswers = () => correctAnswers.map((_, index) =>
   form[`inputQuestion${index + 1}`].value);
 
-/* 
-  let userAnswers = []
-  correctAnswers.forEach((_, index) => {
-  const userAnswer = form[`inputQuestion${index + 1}`].value;
-  userAnswers.push(userAnswer);
-*/
-
 const calculateUserScore = (userAnswers) => {
 	userAnswers.forEach((userAnswer, index) => {
-		const isCorrect = userAnswer === correctAnswers[index];
-		const isWrong = score < 100;
+		const isCorrectAnswer = userAnswer === correctAnswers[index];
+		const isScoreLessThan100 = score < 100;
 
-		if (isCorrect) {
+		if (isCorrectAnswer) {
 			score += 5;
 		}
 
-		if (isWrong) {
+		if (isScoreLessThan100) {
 			showTryAgain();
 		}
 	});
@@ -59,11 +52,16 @@ const animateFinalScore = () => {
 	}, 30);
 };
 
+const resetUserScore = () =>{
+   score = 0
+}
+
 const result = (event) => {
 	event.preventDefault();
 
 	const userAnswers = getUserAnswers();
 
+   resetUserScore()
 	calculateUserScore(userAnswers);
 	showFinalScore();
 	animateFinalScore();
