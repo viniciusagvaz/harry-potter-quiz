@@ -30,6 +30,7 @@ body {
       height: 100vh;
    }
 
+
 header img{
   width: 400px;
 }
@@ -41,6 +42,11 @@ header img{
 main {
   max-width: 900px;
   margin: 0 auto;
+}
+
+
+input[type='radio'] {
+   accent-color: var(--bs-warning);
 }
 
 ::-webkit-scrollbar {
