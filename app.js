@@ -1,6 +1,6 @@
 alert(`AVISO IMPORTANTE:
 
-   Este Quiz deve ser encarado  APENAS como forma de estudo e de maneira alguma deve ser entendido como apoio as terríveis "políticas" e "opiniões" compartilhadas pela autora da obra.
+   Este Quiz deve ser encarado  APENAS como objeto de estudo e de maneira alguma deve ser entendido como apoio as "políticas" e "opiniões" compartilhadas pela autora da obra.
 
 Toda a minha solidariedade a comunidade Trans \u{1F3F3}`)
 
