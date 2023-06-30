@@ -8,8 +8,8 @@
 
 <h2 align='center' color='red'>IMPORTANT DISCLAMER:
 <br><br>
-This Quiz should only be seen as an object of study and somehow should be understood as supporting the "policies" and "opinions" shared by the author of the work.
-All my solidarity with the Trans community. 🏳️‍⚧️
+This Quiz should be seen only as an object of study and, in any shape or form, should be interpreted as a supporting message for the "politics" and "opinions" shared by the author of the work.
+All my solidarity goes to the Trans Community.
 <br><br>
   Att. Vinícius Vaz
 </h2>
