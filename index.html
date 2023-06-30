@@ -1,653 +1,80 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<link
-			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-			integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-			crossorigin="anonymous" />
-		<link
-			rel="stylesheet"
-			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-      <link rel="stylesheet" href="style.css">
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-	<title>Quiz Harry Potter</title>
-	</head>
-	<body class="bg-black">
-		<header>
-         <div class="intro py-3 bg-dark text-center">
-        <div>
-          <img class='text-danger' src="./hogwarts-vector.svg" alt="">
-        </div>
+   <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous" />
+   <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+   <link rel="stylesheet" href="style.css">
 
-        <div class="container">
-		  		<h2 class="title display-1 text-warning my-4">Harry Potter | Quiz</h2>
-		  	</div>
+   <title>Quiz Harry Potter</title>
+</head>
 
-		  </div>
+<body class="bg-black">
+   <header>
+      <div class="intro py-3 bg-dark text-center">
+
+         <div id="vector">
+            <img src="./hogwarts-vector.svg" alt="">
+         </div>
+
+         <div class="container">
+            <h2 class="title display-1 text-warning my-4">Harry Potter | Quiz
+            </h2>
+         </div>
+
+      </div>
 
       <div class="result py-4 bg-warning text-center d-none">
-        <div class="container lead">
-      <span class="text-dark display-2 p-4">
 
-      </span>
-        </div>
-        <div>
-         
-          <button class="tryAgainBtn rounded p-2 m-5 text-warning bg-dark fw-bold d-none">
-            Tente Novamente
-          </button>
-        </div>
+         <div class="container lead">
+            <span class="text-dark display-2 p-4">
+
+            </span>
+         </div>
+
+         <div id="try-again">
+            <button
+               class="tryAgainBtn rounded p-2 m-5 text-warning bg-dark fw-bold d-none">
+               Tente Novamente
+            </button>
+         </div>
+
       </div>
-		</header>
+   </header>
 
-		<main>
-      <div>
-        <div>
-					<h2 class="my-5 text-white container">
-						Teste já seus conhecimentos sobre o mundo mágico de Harry Potter!
-					</h2>
-					<form class="quiz-form bg-dark rounded py-3 text-light">
-						<div id="question1" class="question">
-							<p class="lead px-4 text-warning fw-bold px-4">
-								1. Qual é o nome do professor ou professora de Transfiguração durante o período em que
-								Harry estudou em Hogwarts
-							</p>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion1" value="A" />
-									Professor Quirinus Quirrel
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion1" value="B" />
-									Professora Minerva McGonagoll
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion1" value="C" />
-									Professor Gilderoy Lockhart
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion1" value="D" />
-									Professora Rolanda Hooch
-								</label>
-							</div>
-						</div>
-						<div id="question2" class="question my-5">
-							<p class="lead px-4 text-warning fw-bold fw-4old">
-								2. O endereço da casa em que cresceu Harry Potter é:
-							</p>
+   <main>
+      <section>
+         <div id="sub-title">
 
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion2" value="A" />
-									Rua dos Alfedeiros, numero 4
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion2" value="B" />
-									Rua dos Alfeneiros, numero 4
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion2" value="C" />
-									Rua dos Alfaneiros, numero 24
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion2" value="D" />
-									Rua dos Alfeneiros, numero 24
-								</label>
-							</div>
-						</div>
-						<div id="question3" class="question my-5">
-							<p class="lead px-4 text-warning fw-bold fw-4old">
-								3. Ronald Weasley era o nome do irmão mais novo de:
-							</p>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion3" value="A" />
-									Fred e Jorge
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion3" value="B" />
-									Dino e Lino
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion3" value="C" />
-									Gui e Arthur
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion3" value="D" />
-									Lino e Fred
-								</label>
-							</div>
-						</div>
-						<div id="question4" class="question my-5">
-							<p class="lead px-4 text-warning fw-bold fw-4old">
-								4. Qual era o nome da amiga da Corvinal de Harry e seus amigos ?
-							</p>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion4" value="A" />
-									D'lua Lonvigood
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion4" value="B" />
-									D'lua Lovegood
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion4" value="C" />
-									Luna Lonvigood
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion4" value="D" />
-									Luna Lovegood
-								</label>
-							</div>
-						</div>
-						<div id="question5" class="question my-5">
-							<p class="lead px-4 text-warning fw-bold fw-4old">
-								5. Qual destes presentes foi o primeiro dado a Harry por seu amigo Hagrid ?
-							</p>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion5" value="A" />
-									A coruja Edwiges
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion5" value="B" />
-									Uma vassoura Nimbus 2000
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion5" value="C" />
-									Um bolo de aniversário
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion5" value="D" />
-									Uma capa de invisibilidade
-								</label>
-							</div>
-						</div>
-						<div id="question6" class="question my-5">
-							<p class="lead px-4 text-warning fw-bold fw-4old">
-								6. Bicuço e Norberto são o nome de quê criaturas respectivamente ?
-							</p>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion6" value="A" />
-									Um dragão e uma coruja
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion6" value="B" />
-									Um hypogrifo e um dragão
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion6" value="C" />
-									Um elfo doméstico e um dragão
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion6" value="D" />
-									Um dragão e um hyppogrifo
-								</label>
-							</div>
-						</div>
-						<div id="question7" class="question my-5">
-							<p class="lead px-4 text-warning fw-bold fw-4old">
-								7. No segundo livro, seu amigo Dobby é o responsável por qual incidente ?
-							</p>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion7" value="A" />
-									Harry quebra a perna jogando Quadribol
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion7" value="B" />
-									Harry quebra a mão jogando Quadribol
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion7" value="C" />
-									Harry é acusado de usar magia fora da escola
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion7" value="D" />
-									Harry perde os ossos do braço
-								</label>
-							</div>
-						</div>
-						<div id="question8" class="question my-5">
-							<p class="lead px-4 text-warning fw-bold fw-4old">
-								8. Qual o nome do primeiro par romântico de Hermione na série ?
-							</p>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion8" value="A" />
-									Neville Longbottom
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion8" value="B" />
-									Vitor Krum
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion8" value="C" />
-									Rony Weasley
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion8" value="D" />
-									Draco Malfoy
-								</label>
-							</div>
-						</div>
-						<div id="question9" class="question my-5">
-							<p class="lead px-4 text-warning fw-bold fw-4old">9. A qual casa pertence o aluno Simas Finnigan ?</p>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion9" value="A" />
-									Sonserina
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion9" value="B" />
-									Lufa-lufa
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion9" value="C" />
-									Grifinória
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion9" value="D" />
-									Corvinal
-								</label>
-							</div>
-						</div>
-						<div id="question10" class="question my-5">
-							<p class="lead px-4 text-warning fw-bold fw-4old">
-								10. Trevor é o nome de qual criatura em Harry Potter ?
-							</p>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion10" value="A" />
-									O sapo de Neville
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion10" value="B" />
-									O gato de Hermione
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion10" value="C" />
-									O rato de Rony
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion10" value="D" />
-									O cachorro de Hagrid
-								</label>
-							</div>
-						</div>
-						<div id="question11" class="question my-5">
-							<p class="lead px-4 text-warning fw-bold fw-4old">
-								11. Qual dessas duas alunas de Hogwarts não são jogadoras de Quadribol?
-							</p>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion11" value="A" />
-									Katie Bell e Cho Chang
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion11" value="B" />
-									Angelina Jones e Anna Abbot
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion11" value="C" />
-									Gina Weasley e Alícia Spinnet
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion11" value="D" />
-									Susana Bones e Lilá Brown
-								</label>
-							</div>
-						</div>
-						<div id="question12" class="question my-5">
-							<p class="lead px-4 text-warning fw-bold fw-4old">
-								12. Qual amigo Harry encontra por acaso na copa mundial de Quadribol?
-							</p>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion12" value="A" />
-									Lino Jordan
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion12" value="B" />
-									Simas Finnigan
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion12" value="C" />
-									Dino Thomas
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion12" value="D" />
-									Nevile Longbottom
-								</label>
-							</div>
-						</div>
-						<div id="question12" class="question my-5">
-							<p class="lead px-4 text-warning fw-bold fw-4old">
-								13. Qual desses alunos pertence a casa da Lufa Lufa?
-							</p>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion13" value="A" />
-									Gregório Goyle
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion13" value="B" />
-									Pansy Parkinson
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion13" value="C" />
-									Justino Finch-Fletchey
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion13" value="D" />
-									Parvati Pa
-								</label>
-							</div>
-						</div>
-						<div id="question14" class="question my-5">
-							<p class="lead px-4 text-warning fw-bold fw-4old">14. Que tipo de criatura é Peeves(Pirraça) ?</p>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion14" value="A" />
-									Um fantasma
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion14" value="B" />
-									Uma assombração
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion14" value="C" />
-									Um poltergeist
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion14" value="D" />
-									Um bicho-papão
-								</label>
-							</div>
-						</div>
-						<div id="question15" class="question my-5">
-							<p class="lead px-4 text-warning fw-bold fw-4old">
-								15. Quais são os animais que tomam forma do patrôno de Severo Snape e Hermione
-								Granger respectivamente ?
-							</p>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion15" value="A" />
-									Uma cobra e uma lontra
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion15" value="B" />
-									Uma cobra e um gato
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion15" value="C" />
-									Uma corsa e uma lontra
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion15" value="D" />
-									Um veado e uma corsa
-								</label>
-							</div>
-						</div>
+            <h2 class="my-5 text-white container">
+               Teste já seus conhecimentos sobre o mundo mágico de Harry Potter!
+            </h2>
 
-            <div id="question16" class="question my-5">
-							<p class="lead px-4 text-warning fw-bold fw-4old">
-								16. 'Príncipe Mestiço' é apelido de qual desses personagens ?
-							</p>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion16" value="A" />
-									Sirius Black
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion16" value="B" />
-									Albus Dumbledore
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-                  <input type="radio" class="radio-color" name="inputQuestion16" value="C" />
-                  Tom Riddle
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-                <label class="form-check-label">
-                  <input type="radio" class="radio-color" name="inputQuestion16" value="D" />
-                  Severo Snape
-								</label>
-							</div>
-						</div>
+            <form class="quiz-form bg-dark rounded py-3 text-light">
+               <div id="questions"></div>
+               <div class="text-center">
+                  <button class="send btn my-5 bg-warning text-dark">Enviar</button>
+               </div>
+            </form>
 
-            <div id="question17" class="question my-5">
-							<p class="lead px-4 text-warning fw-bold fw-4old">
-								17. Qual desses personagens passa a jogar Quadribol profissionalmente após concluir os estudos em Hogwarts ?
-							</p>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion17" value="A" />
-									Gina Weasley
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion17" value="B" />
-									Harry Potter
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion17" value="C" />
-									Ronald Weasley
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion17" value="D" />
-									Draco Malfoy
-								</label>
-							</div>
-						</div>
+         </div>
+      </section>
+   </main>
 
-            <div id="question18" class="question my-5">
-							<p class="lead px-4 text-warning fw-bold fw-4old">
-                18. Ainda sobre Quadribol, de qual time Ronny tem um poster pendurado em sua parede ?
-							</p>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion18" value="A" />
-									Appleby Arrrows
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion18" value="B" />
-                  Chudley Cannons
-                </label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-                <label class="form-check-label">
-                  <input type="radio" class="radio-color" name="inputQuestion18" value="C" />
-                  Holyhead Harpies
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion18" value="D" />
-									Puddlemere United
-								</label>
-							</div>
-						</div>
+   <footer class="bg-dark mt-5 text-center">
+      <p class="text-secondary">Desenvolvido por Vinícius Vaz</p>
+   </footer>
 
-            <div id="question19" class="question my-5">
-							<p class="lead px-4 text-warning fw-bold fw-4old">
-								19. Qual era o lema do Mapa dos Marotos ?
-							</p>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion19" value="A" />
-									"Eu prometo levemente que não farei nada de bom!"
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion19" value="B" />
-                  "Eu prometo solenemente que não farei nada de bom!"
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-                <label class="form-check-label">
-                  <input type="radio" class="radio-color" name="inputQuestion19" value="C" />
-                  "Eu juro somente que não farei nada de bom!"
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion19" value="D" />
-									"Eu juro solenemente que não farei nada de bom!"
-								</label>
-							</div>
-						</div>
 
-            <div id="question20" class="question my-5">
-							<p class="lead px-4 text-warning fw-bold fw-4old">
-								20. Qual desses feitiços lançam raios vermelhos ?
-							</p>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion20" value="A" />
-									Sectumsempra
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion20" value="B" />
-									Flippendo
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion20" value="C" />
-									Expelliarmus
-								</label>
-							</div>
-							<div class="form-check my-2 px-5 text-white">
-								<label class="form-check-label">
-									<input type="radio" class="radio-color" name="inputQuestion20" value="D" />
-									Estupefaça
-								</label>
-							</div>
-						</div>
+   <script src="./app.js"></script>
+   <script src="./fetch.js"></script>
+</body>
 
-						<div class="text-center">
-							<button class="btn my-5 bg-warning text-dark">Enviar</button>
-						</div>
-					</form>
-          
-				</div>
-			</div>
-		</main>
-
-		<footer class="intro bg-dark mt-5 text-center">
-			<p class="text-secondary">por Vinícius Vaz (zoomviex)</p>
-		</footer>
-		<script src="./app.js"></script>
-	</body>
 </html>
