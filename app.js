@@ -77,8 +77,11 @@ const showTryAgain = () => {
    const tryAgainBtn = document.querySelector(".tryAgainBtn");
 
    tryAgainBtn.classList.remove("d-none");
-
-   tryAgainBtn.addEventListener("click", () => location.reload());
+   
+   tryAgainBtn.addEventListener("click", () => { 
+      finalResult.classList.add("d-none");
+      form.reset() 
+   });
 };
 
 form.addEventListener("submit", result);
