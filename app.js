@@ -38,7 +38,7 @@ const calculateUserScore = (userAnswers) => {
 
 const showFinalScore = () => {
    scrollTo({
-      top: 550,
+      top: 20,
       left: 0,
       behavior: "smooth",
    });
@@ -85,11 +85,6 @@ const showTryAgain = () => {
 
       form.reset()
 
-      scrollTo({
-         bottom: 1000,
-         left: 0,
-         behavior: "smooth",
-      })
    });
 };
 

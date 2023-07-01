@@ -57,7 +57,7 @@ input[type='radio'] {
    accent-color: var(--bs-warning);
 }
 
-@media (max-width: 500px) {
+@media (max-width: 480px) {
    img {
       max-width: 280px;
    }
