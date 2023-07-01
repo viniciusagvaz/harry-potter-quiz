@@ -1,8 +1,8 @@
-alert(`AVISO IMPORTANTE:
+// alert(`AVISO IMPORTANTE:
 
-   Este Quiz deve ser encarado  APENAS como objeto de estudo e de maneira alguma deve ser entendido como apoio às "políticas" e "opiniões" compartilhadas pela autora da obra.
+//    Este Quiz deve ser encarado  APENAS como objeto de estudo e de maneira alguma deve ser entendido como apoio às "políticas" e "opiniões" compartilhadas pela autora da obra.
 
-Toda a minha solidariedade a comunidade Trans \u{1F3F3}`)
+// Toda a minha solidariedade a comunidade Trans \u{1F3F3}`)
 
 const form = document.querySelector(".quiz-form");
 const finalResult = document.querySelector(".result");
@@ -37,10 +37,11 @@ const calculateUserScore = (userAnswers) => {
 
 const showFinalScore = () => {
    scrollTo({
-      top: 10,
+      top: 550,
       left: 0,
       behavior: "smooth",
    });
+
    finalResult.classList.remove("d-none");
 };
 
@@ -77,10 +78,17 @@ const showTryAgain = () => {
    const tryAgainBtn = document.querySelector(".tryAgainBtn");
 
    tryAgainBtn.classList.remove("d-none");
-   
-   tryAgainBtn.addEventListener("click", () => { 
+
+   tryAgainBtn.addEventListener("click", () => {
       finalResult.classList.add("d-none");
-      form.reset() 
+
+      form.reset()
+
+      scrollTo({
+         bottom: 1000,
+         left: 0,
+         behavior: "smooth",
+      })
    });
 };
 
